@@ -4,6 +4,17 @@ on:
   pull_request:
     branches:
       - main
+      
+      workflow_dispatch:
+    inputs:
+      action:
+        description: "Was soll Terraform machen?"
+        required: true
+        default: "plan"
+        type: choice
+        options:
+          - plan
+          - apply
 
 jobs:
   terraform:
