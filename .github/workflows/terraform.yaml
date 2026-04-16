@@ -4,8 +4,7 @@ on:
   pull_request:
     branches:
       - main
-      
-      workflow_dispatch:
+  workflow_dispatch:
     inputs:
       action:
         description: "Was soll Terraform machen?"
@@ -35,6 +34,3 @@ jobs:
 
       - name: Terraform Validate
         run: terraform validate
-
-      # - name: Terraform Plan
-      #  run: terraform plan
